@@ -1,32 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+body{
+  background: #ccc;
+}
 .App {
   text-align: center;
 }
+/*照片的样式*/
+.picTab{
+  width:1500px;
+  height: 600px;
+}
+.picTab ul{
+  width: 100%;
+  height: 100%;
+}
+.picTab ul li{
+  width: 340px;
+  height: 416px;
+  background: white;
+  box-shadow: 0 0 15px black;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transition: .7s;
+  transform-style: preserve-3d;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+}
+.picTab ul li .frontSide{
+  width: 100%;
+  height: 100%;
+  transform: translateZ(1px);
+}
+.picTab ul li .frontSide img{
+  width:300px;
+  height:360px;
+  margin-top: 28px;
+}
+.picTab ul li .reverseSide{
+  position:absolute;
+  left:0;
+  top:0;
+  margin:100px 20px;
+  line-height: 30px;
+  transform:translateZ(-1px) rotateY(-180deg); /*利用动画3d效果，把反面标签藏在后面*/
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+/*照片下面的小点的样式 */
+.PicList{
+  width: 450px;
+  height: auto;
+  position: absolute;
+  bottom: 10px;
+  left:50%;
+  transform:translate3d(-50%,0,0);
+  z-index: 200;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.PicList ul{
+  width: 100%;
+  height: 100%;
+}
+.PicList ul li{
+  float: left;
+  width: 15px;
+  height: 15px;
+  background:#007d77;
+  margin:0 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .7s;
+}
+.PicList ul li.active{
+  transform: scale(2) rotateY(-180deg);
+  background:yellow;
+}
+.PicList ul li.reActive{
+  transform: scale(2) rotateY(180deg);
+  background:pink;
 }

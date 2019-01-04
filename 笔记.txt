@@ -1,0 +1,6 @@
+照片墙APP：
+1、照片随机摆放，摆放是有层叠效果的
+2、下面有点击按钮，每个按钮对应具体的一张图片
+3、允许按钮可以点击两次，第一次点击是使得对应的图片出现在中心且Z轴最高，第二次点击是呈现图片的背面信息
+4、每次点击，所有照片转圈的角度都是随机的，-360度——360度  transform:rotate(Math.random()*-720+360)deg  left:Math.random()*window.innerWidth-170 top:Math.random().window.innerHeight-120
+5、点击函数click(i,e)中e.target.classList.contains('active')为false则表示已经点击过一次了，contain是表示是否包含类。classlist.add()添加类，classlist.remove()删除类
